@@ -1,6 +1,7 @@
 package com.sip.ams.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,9 +17,16 @@ public class HomeController {
 
 	
 	@RequestMapping("info")
-	@ResponseBody
-	public String info()
+	//@ResponseBody
+	public String info(Model model)
 	{
-		return "<h2>Mohamed Amine MEZGHICH</h2>";
+		String formation = "Devops";
+		String date = "Janvier";
+		int nbrCandidats = 12;
+		String contenu[] = {"Git","Docker","Maven","Jenkins","SonarQube"};
+		model.addAttribute("formation", formation);
+		model.addAttribute("dateFormation", date);
+		model.addAttribute("contenu", contenu);
+		return "/home/info";
 	}
 }

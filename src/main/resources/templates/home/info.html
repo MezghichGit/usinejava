@@ -1,0 +1,10 @@
+<h2>Mohamed Amine MEZGHICH</h2>
+<h3>Cours Usine logicielle avec Spring</h3>
+
+<h4 th:text="${formation}">ccc</h4>
+
+<h5 th:text="${dateFormation}">Date Formation</h5>
+
+<ul th:each="outil : ${contenu}">
+	<li th:text="${outil}"></li>
+</ul>
